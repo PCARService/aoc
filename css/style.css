@@ -1,0 +1,206 @@
+* {
+    margin: 0; padding: 0; box-sizing: border-box; 
+}
+
+body { 
+    font-family: Arial, sans-serif; margin: 20px; 
+    background-color: #181818;
+}
+
+.container {
+    margin: auto;
+    width: 60vw;
+    color: whitesmoke;
+}
+
+h1 {
+    text-align: center; 
+}
+    
+label, input, select {
+    display: block; margin: 10px 0; 
+}
+        
+table {
+    width: 100%; border-collapse: collapse; margin-top: 20px;
+}
+        
+th, td {
+    border: 1px solid #ccc; padding: 8px; text-align: left;
+}
+
+form input, form select {
+    text-align: center;
+    border-radius: 10px; 
+    border: 1px solid #333333;
+    background-color: #252525;
+    color: whitesmoke;
+    transition: .3s;
+}
+
+form input:hover, form select:hover {
+    border: 1px solid #fc5cff;
+    background-color: #461a47;
+}
+
+form button {
+    background-color: #181818; 
+    color: whitesmoke; 
+    border: 1px solid #333333; 
+    padding: 10px 15px; 
+    border-radius: 10px; 
+    cursor: pointer;
+    transition: .3s;
+}
+
+form button:hover {
+    background-color: #461a47;
+    border: 1px solid #fc5cff;
+}
+
+.bloque-aula {
+    border: 1px solid #fc5cff;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bloque-aula select {
+    border-radius: 10px;
+    border: 1px solid #fc5cff;
+    background-color: #333333;
+    color: whitesmoke;
+    transition: .3s;
+}
+
+/* Offcanvas lateral izquierdo */
+.offcanvas {
+    color: whitesmoke;
+    position: fixed;
+    top: 0;
+    left: -25vw; /* Oculto fuera de pantalla */
+    width: 25vw;
+    height: 100%;
+    background: #252525;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    transition: left 0.3s;
+    z-index: 1000;
+    padding: .3vw;
+}
+
+.offcanvas ul {
+    list-style: none;
+    display: flex;
+}
+
+/* Cuando está activo, se muestra */
+.offcanvas.activo {
+    left: 0;
+}
+
+.offcanvas.activo::after {
+    content: "";
+    position: absolute;
+    top: 3vw;
+    right: 0;
+    width: 1px; /* Grosor del borde */
+    height: 100%;
+    background: #fc5cff;
+    z-index: 1;
+}
+
+/* Botón flecha */
+.offcanvas-btn {
+    color: whitesmoke;
+    position: fixed;
+    width: 3vw;
+    height: 3vw;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    z-index: 1100;
+    background: #252525;
+    border: 1px solid #fc5cff;
+    border-left: none; border-top: none;
+    border-radius: 0 5px 5px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+/* Cuando el offcanvas está activo, mueve el botón */
+.offcanvas.activo + .offcanvas-btn {
+    left: 25vw;
+    color: #333333;
+    /* Cambia la flecha de dirección */
+}
+
+.panelOffcanvas {
+    background-color: #461a4700;
+    width: 100%;
+    height: 94.4%;
+    margin: auto;
+    float: left;
+    transition: .3s;
+    position: relative;
+    padding: 1vw;
+}
+
+.panelOffcanvas.curso-activo {
+    background-color: #fc5cff;
+    border-radius: 0 15px 15px 15px;
+}
+
+.panelOffcanvas.aula-activo {
+    background-color: #fc5cff;
+    border-radius: 15px 15px 15px 15px;
+}
+
+#btnCurso, #btnAula{
+    width: 8vw;
+    padding: 1vw;
+    background-color: #333333;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 15px 15px 15px 15px;
+    transition: .3s;
+}
+
+#btnCurso:hover, #btnAula:hover {
+    background-color: #461a47;
+}
+
+#btnCurso.activo, #btnAula.activo {
+    background-color: #fc5cff;
+    border-radius: 15px 15px 0 0;
+}
+
+
+.publicidad {
+    margin-left: 2vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 15vw;              /* Ajusta el ancho según prefieras */
+    height: 100vh;            /* Ocupa todo el alto de la ventana */
+    background-color: #333333;
+    color: whitesmoke;
+    z-index: 1200;            /* Por encima del contenido normal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 10px;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    border-left: 1px solid #fc5cff;
+}
+
+#interiorCurso, #interiorAula {
+    display: none;
+}
+#interiorCurso.activo, #interiorAula.activo {
+    display: block;
+}
