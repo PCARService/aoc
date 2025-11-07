@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>AOC - Página principal</title>
+</head>
+<body>
+    <div class="publicidad">
+        <h2>Publicidad</h2>
+        <p>Aquí va la publicidad</p>
+    </div>
+    
+    <!-- Offcanvas y botón flecha -->
+    <div id="offcanvas" class="offcanvas">
+        <!-- Contenido del panel -->
+        <ul>
+            <li><button id="btnCurso">Cursos</button></li>
+            <li><button id="btnAula">Aulas</button></li>
+        </ul>
+
+        <div class="panelOffcanvas">
+            <div id="interiorCurso">
+                <form id="cursoForm">
+                    <label>Nombre del curso:
+                        <input type="text" id="nombreCurso" required>
+                    </label>
+                    <label>Cantidad de estudiantes:
+                        <input type="number" id="cantidadEstudiantes" required>
+                    </label>
+                    <button type="submit">Agregar Curso</button>
+                </form>
+
+                <!-- Tabla para mostrar cursos -->
+                <table id="tablaCurso">
+                    <thead>
+                        <tr>
+                            <th>Curso</th>
+                            <th>Estudiantes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Acá se agregan los cursos -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="interiorAula">
+                <!-- Formulario para agregar aulas -->
+                <form id="aulaForm">
+                    <label>Número de aula:
+                        <input type="number" id="numeroAula" required>
+                    </label>
+                    <label>Capacidad de estudiantes:
+                        <input type="number" id="capacidadEstudiantes" required>
+                    </label>
+                     <label>Piso donde se ubica el aula:
+                        <input type="number" id="pisoAula" required>
+                     </label>
+                    <label>Tipo de aula:
+                        <select id="tipoAula" required>
+                            <option value="teorica">Teórica</option>
+                            <option value="computacion">Computación</option>
+                            <option value="laboratorio">Laboratorio</option>
+                            <option value="construccion">Construcción</option>
+                        </select>
+                    </label>
+                    <button type="submit">Agregar Aula</button>
+                 </form>
+            </div>
+            
+        </div>
+    </div>
+    <button id="toggleOffcanvas" class="offcanvas-btn">&#x25B6;</button>
+
+    <div class="container">
+        <h1>Aplicación de Organización de Clases</h1>
+        <div id="matrizAula"></div>
+    </div>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
